@@ -1,1 +1,151 @@
+<!DOCTYPE html>
+<html lang="sq">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muzeu i sendeve</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header-tag">
+            Programimi në WWW · Zgjidhje reference
+        </div>
+
+        <h1>Muzeu i sendeve</h1>
+
+        <hr class="divider">
+
+        <!-- Navigimi -->
+        <div class="nav-links">
+            <a href="#celesi">Çelësi</a>
+            <a href="#filxhani">Filxhani</a>
+            <a href="#bileta">Bileta</a>
+        </div>
+
+        <div class="subtitle">
+            Ekspozita: 1 tetor 2026
+        </div>
+
+        <!-- Kartat -->
+        <div class="cards-grid">
+
+            <!-- Çelësi -->
+            <div class="card" id="celesi">
+
+                <h2>Çelësi</h2>
+
+                <div class="img-box">
+                    <svg viewBox="0 0 100 100">
+                        <path
+                            d="M 30 35 C 20 35 12 43 12 53 C 12 63 20 71 30 71 C 38 71 45 65 47 57 L 75 57 L 75 67 L 85 67 L 85 57 L 90 57 L 90 47 L 47 47 C 45 39 38 35 30 35 Z M 30 47 C 33.3 47 36 49.7 36 53 C 36 56.3 33.3 59 30 59 C 26.7 59 24 56.3 24 53 C 24 49.7 26.7 47 30 47 Z"
+                            fill="#aa600a"
+                            transform="rotate(-35 50 50)" />
+                    </svg>
+                </div>
+
+                <p class="card-text">
+                    Hapja e një dere mund të jetë fillimi i një historie.
+                </p>
+
+                <details>
+                    <summary>Historia e fshehur</summary>
+
+                    <p class="details-content">
+                        Kjo është historia e fshehur e çelësit të vjetër.
+                    </p>
+                </details>
+
+            </div>
+
+
+            <!-- Filxhani -->
+            <div class="card" id="filxhani">
+
+                <h2>Filxhani</h2>
+
+                <div class="img-box">
+                    <svg viewBox="0 0 100 100">
+                        <path
+                            d="M 20 30 L 20 62 C 20 74 30 78 50 78 C 70 78 80 74 80 62 L 80 30 Z"
+                            fill="#1d70b8" />
+
+                        <path
+                            d="M 80 38 C 93 38 93 58 80 58"
+                            stroke="#1d70b8"
+                            stroke-width="8"
+                            fill="none"
+                            stroke-linecap="round" />
+                    </svg>
+                </div>
+
+                <p class="card-text">
+                    Një filxhan mbledh kujtime nga bisedat.
+                </p>
+
+                <details>
+                    <summary>Historia e fshehur</summary>
+
+                    <p class="details-content">
+                        Kjo është historia e fshehur e filxhanit.
+                    </p>
+                </details>
+
+            </div>
+
+
+            <!-- Bileta -->
+            <div class="card" id="bileta">
+
+                <h2>Bileta</h2>
+
+                <div class="img-box">
+                    <svg viewBox="0 0 120 80">
+                        <rect
+                            x="15"
+                            y="15"
+                            width="90"
+                            height="50"
+                            rx="8"
+                            fill="#e5b142" />
+
+                        <line
+                            x1="80"
+                            y1="15"
+                            x2="80"
+                            y2="65"
+                            stroke="#f1f5f9"
+                            stroke-width="3"
+                            stroke-dasharray="4 3" />
+                    </svg>
+                </div>
+
+                <p class="card-text">
+                    Një udhëtim i shkurtër, një kujtim i gjatë.
+                </p>
+
+                <details>
+                    <summary>Historia e fshehur</summary>
+
+                    <p class="details-content">
+                        Kjo është historia e fshehur e biletës.
+                    </p>
+                </details>
+
+            </div>
+
+        </div>
+
+        <footer>
+            Shembull mësimor · Të dhëna të sajuara · Vetëm front end
+        </footer>
+
+    </div>
+
+</body>
+</html>
