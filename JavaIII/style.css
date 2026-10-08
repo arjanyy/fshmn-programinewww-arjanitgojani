@@ -1,0 +1,124 @@
+/* Java III · Klinika e CSS: shpëto afishen */
+
+/* Variabla për ngjyrat dhe hapësirat (një vend për t'i ndryshuar). */
+:root {
+  --ink: #17263c;
+  --paper: #ffffff;
+  --page: #f3f6fb;
+  --brand: #176b5f;
+  --brand-dark: #0f4f46;
+  --line: #d6dce8;
+  --focus: #b45309;
+  --radius: 10px;
+  --space-s: 0.5rem;
+  --space-m: 1rem;
+  --space-l: 2rem;
+  --gutter: 1.4rem;
+}
+
+/* Box model: width dhe height përfshijnë padding + border.
+   Pa këtë, width:100% + padding do ta bënte kutinë më të gjerë se ekrani. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--page);
+}
+
+/* Fokusi i dukshëm për çdo lidhje (vetëm kur përdoret tastiera). */
+a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: var(--space-m);
+  top: -4rem;
+  padding: var(--space-s) var(--space-m);
+  color: #fff;
+  background: var(--ink);
+}
+.skip:focus-visible {
+  top: var(--space-m);
+}
+
+.site-header {
+  padding: var(--space-s) var(--gutter) var(--space-l);
+  border-bottom: 3px solid var(--brand);
+}
+.site-header p {
+  margin: 0;
+}
+.site-header h1 {
+  margin: var(--gutter) 0 0;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+main {
+  padding: 2.75rem var(--gutter) 3rem;
+}
+
+.site-footer {
+  padding: var(--gutter);
+}
+
+/* Afishja: gjerësia e kufizuar me max-width, kështu nuk dalim nga 360 px. */
+.afisha {
+  max-width: 42rem;
+  margin-inline: auto;
+  padding: clamp(1rem, 5vw, var(--space-l));
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.afisha__title {
+  margin: 0 0 0.9rem;
+  font-size: 1.4rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.afisha__meta {
+  margin: 0 0 var(--space-m);
+}
+.afisha p:last-of-type {
+  margin: 0 0 0.75rem;
+}
+
+/* Etiketat: dallohen me tekst dhe me stilin e kornizës (e plotë / me pika), jo vetëm me ngjyrë. */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  margin: var(--space-m) 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+.tag {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  color: var(--ink);
+  border: 2px solid var(--brand);
+  border-radius: 999px;
+}
+.tag--limited {
+  border-style: dashed;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.55rem 1rem;
+  color: #fff;
+  background: var(--brand);
+  border-radius: 6px;
+}
+.btn:hover {
+  background: var(--brand-dark);
+}
