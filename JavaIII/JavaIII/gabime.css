@@ -1,0 +1,15 @@
+/* Diagnoza (pa !important):
+   1) Konflikti i ngjyrës: #poster { color: white } kundër .poster { color: #17263c }.
+      Specificiteti i ID-së (1,0,0) i fiton klasës (0,1,0), pavarësisht renditjes,
+      kështu teksti dilte i BARDHË mbi sfond të BARDHË (i palexueshëm).
+      Zgjidhja: një rregull i vetëm me selektor klase, pa rregull të dytë konfliktual.
+   2) Tejkalimi i gjerësisë: me content-box, width 700px + 2×80px padding = 860px,
+      shumë më shumë se ekrani 360 px. Zgjidhja: border-box, width:100% dhe max-width. */
+.poster {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 700px;
+  padding: clamp(1rem, 6vw, 80px);
+  color: #17263c;
+  background: white;
+}
