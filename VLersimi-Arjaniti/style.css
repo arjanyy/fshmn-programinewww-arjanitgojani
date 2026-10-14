@@ -1,0 +1,30 @@
+* { 
+  box-sizing: border-box; 
+}
+body {
+  font-family: system-ui, Arial, sans-serif;
+  margin: 1rem;
+}
+.cards {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  padding: 2rem;
+  border: 2px solid navy;
+}
+.cards article {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+a:focus, a:focus-visible {
+  outline: 3px solid navy;
+  outline-offset: 3px;
+}
+
+@media (min-width: 1000px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
