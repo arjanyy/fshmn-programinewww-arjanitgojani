@@ -1,0 +1,169 @@
+/* Festivali që përshtatet në çdo ekran */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --blu: #1d4e6b;
+  --blu-e-erret: #123347;
+  --e-celet: #eef4f7;
+  --kufiri: #c5d3dc;
+  --thekso: #f2b705;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 1rem;
+  line-height: 1.5;
+  color: #1c1c1c;
+}
+
+/* Lidhja "Kalo te përmbajtja": fshihet jashtë ekranit, shfaqet kur merr fokus */
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+}
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  background: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 10;
+}
+
+/* Fokusi i dukshëm për tastierën */
+a:focus-visible {
+  outline: 3px solid var(--thekso);
+  outline-offset: 2px;
+}
+
+header {
+  background: var(--blu);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+header p {
+  margin: 0;
+}
+h1 {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin: 0.25rem 0 1rem;
+  overflow-wrap: anywhere;
+}
+
+/* Menuja me Flexbox: elementet shtrihen dhe kalojnë në rresht të ri kur s'ka vend */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu li {
+  flex: 1 1 8rem;
+}
+.menu a {
+  display: block;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  background: var(--blu-e-erret);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.3rem;
+}
+.menu a:hover {
+  background: #fff;
+  color: var(--blu-e-erret);
+}
+
+/* Grid i kartave: mobile first, 1 kolonë si bazë */
+.kartat {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Nga 600px: 2 kolona */
+@media (min-width: 600px) {
+  .kartat {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Nga 900px: 3 kolona */
+@media (min-width: 900px) {
+  .kartat {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Karta: Flexbox në kolonë që lidhja të mbetet gjithmonë poshtë */
+.karta {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid var(--kufiri);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #fff;
+}
+.karta img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.trupi {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem;
+}
+.karta h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere; /* titulli i gjatë thyhet, nuk del jashtë kartës */
+}
+.kategoria {
+  margin: 0;
+  color: var(--blu);
+  font-weight: bold;
+}
+.orari {
+  margin: 0.25rem 0 1rem;
+}
+.detaje {
+  margin-top: auto; /* e shtyn lidhjen në fund të kartës */
+  align-self: flex-start;
+  padding: 0.4rem 0.8rem;
+  background: var(--e-celet);
+  color: var(--blu-e-erret);
+  border: 1px solid var(--blu);
+  border-radius: 0.3rem;
+  text-decoration: none;
+}
+.detaje:hover {
+  background: var(--blu);
+  color: #fff;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+footer {
+  border-top: 1px solid var(--kufiri);
+  padding-top: 1rem;
+  font-size: 0.9rem;
+}
